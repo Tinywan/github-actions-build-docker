@@ -1,8 +1,6 @@
-# github-actions-build-docker
 This article will help you to set up a workflow with GitHub actions that will build and tag the Docker image and push it to the Docker Hub registry.
 
-
-### Creating the Repo
+## Creating the Repo
 Let’s start by creating a new GitHub repo that will hold our code (in our case, really only a Dockerfile is needed) for building the image. Create the repo in GitHub, and name it whatever you want. Add one file in the root of the repo, called Dockerfile. If you’re following along with me, you’ll be building an image that has the Angular CLI baked in to it. If you need a different image, then change the following to match your needs. The contents of the Dockerfile should be:
 
 ```docker
@@ -27,11 +25,12 @@ RUN apk update \
 RUN npm install -g @angular/cli@8
 ```
 
-### Creating the GitHub Action
+## Creating the GitHub Action
 
-![image](1)
+So to get started with your GitHub action, click on the “Actions” tab on your repo’s page in GitHub:  
+![image](action.png)
 
 You should now see a landing page that looks similar to this:  
-![image](1)
+![image](action2.png)
 
 [more info](https://www.prestonlamb.com/blog/creating-a-docker-image-with-github-actions?from=singlemessage)
