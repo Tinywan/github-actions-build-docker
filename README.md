@@ -1,3 +1,5 @@
+[![Build status](https://github.com/Tinywan/github-actions-build-docker/workflows/CI/badge.svg)]()
+
 This article will help you to set up a workflow with GitHub actions that will build and tag the Docker image and push it to the Docker Hub registry.
 
 ## Creating the Repo
@@ -35,6 +37,20 @@ You should now see a landing page that looks similar to this:
 
 
 This step logs us in to the Docker Hub Registry. We output the password and then pipe that in to the docker login command. There is something new here, though, and that’s the secrets that we are using. GitHub has a section in the settings for each repository where you can set up secrets to be used for things like the GitHub Actions. It’s great, because otherwise there would be no way to log in to third party services like Docker Hub without putting your password or access key in to the repo, visible for everyone to see. To find the secrets, click on Settings at the top of the repo, then Secrets in the left nav list, and then add the secrets that you need, in this case our username and password for Docker Hub:  
+
+![username](username.png)  
+
+## Tagging and Releasing
+
+This last step is tagging a release in our GitHub repo. This will kick off a build for our workflow. To do this, click on the releases section of your repo, which is under the Code tab:  
+
+![username](username.png)  
+
+Click on the “Draft a new release” button. GitHub will walk you through the steps of creating the release, but you should choose a tag name and the desired commit to release. You can add a title and a description as well. Remember two things: the tag name you use here will be used as the tag name for your Docker image, and once you click the “Publish release” button, the workflow will be started. Once you’re ready, publish the release!  
+
+## Viewing the Workflow Output  
+
+To view what happened in your workflow, and to debug if needed, go back to the Actions tab in your repo. Once you’ve created an action, that page will look like this:  
 
 ![username](username.png)  
 
