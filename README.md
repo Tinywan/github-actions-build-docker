@@ -33,4 +33,9 @@ So to get started with your GitHub action, click on the “Actions” tab on you
 You should now see a landing page that looks similar to this:  
 ![image](action2.png)
 
+
+This step logs us in to the Docker Hub Registry. We output the password and then pipe that in to the docker login command. There is something new here, though, and that’s the secrets that we are using. GitHub has a section in the settings for each repository where you can set up secrets to be used for things like the GitHub Actions. It’s great, because otherwise there would be no way to log in to third party services like Docker Hub without putting your password or access key in to the repo, visible for everyone to see. To find the secrets, click on Settings at the top of the repo, then Secrets in the left nav list, and then add the secrets that you need, in this case our username and password for Docker Hub:  
+
+![username](username.png)  
+
 [more info](https://www.prestonlamb.com/blog/creating-a-docker-image-with-github-actions?from=singlemessage)
